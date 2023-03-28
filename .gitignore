@@ -3,3 +3,4 @@ __pycache__
 .gitattributes
 .gitignore
 arxiv_data
+.DS_STORE
