@@ -4,10 +4,7 @@
 ## Summary 
 #### Motivation
 What do scientific authorship trends tells us about the importance of different scientific fields? 
-Can this information help a young scientist choose their field?
-- Measuring authors who *switch between fields* tells us how scientists rank the relative importance of fields. 
-More importantly, this measures preference *for people who have seen both fields*, and then made the monumental decision to switch or stay.
-This is a much stronger signal of value than just measuring author number over time, which includes first time authors. 
+Can this information help a young scientist choose their field? Measuring authors who *switch between fields* tells us how scientists rank the relative importance of fields. 
 
 #### Methods
 Here we take the dataset of all ArXiv papers ever published, and extract the way that authors transition between scientific fields over time. 
@@ -62,3 +59,13 @@ The main metrics are:
   - This is just the total transition counts, divided by the field size of the source field.
   - In other words, it is something like the probability, conditioned on being an author in a specific field, that you transition
   from that field to another field during that year.
+
+## Caveats of the analysis
+This isn't perfect. Here's a few potential problems that could be solved. 
+
+- ArXiv isn't complete: This is only ArXiv data. Ideally I would want to include more databases, 
+and characterize the paper categories in a more general way.
+- Non-unique author names: I use each author name as a unique string to identify an author, but this isn't correct. 
+Some people have the same name, and I will therefore count them as the same person. To avoid this to some degree, I 
+don't count any authors with more than 100 publications. This should help, but will then mess up the total author number.
+In the end, it's a tradeoff, and would be better to use something like Orchid identifiers. 
