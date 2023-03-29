@@ -2,10 +2,15 @@
 
  
 ## Summary 
-These files take the dataset of all ArXiv papers ever published, and
-extract the way that authors transition between scientific fields over time.
+**Motivation**: What do authorship trends, and specifically authors who switch fields, tell us about how scientists value different fields? 
 
-The main metrics are:
+**Intuition**: Measuring authors who *switch between fields* tells us how scientists rank the relative importance of fields. 
+More importantly, this measures preference *for people who have seen both fields*, and then made the monumental decision to switch or stay.
+This is a much stronger signal than just measuring author number over time, which includes first time authors. 
+
+**Method**: Here we take the dataset of all ArXiv papers ever published, and extract the way that authors transition between scientific fields over time. 
+
+The main metrics measured are:
 - The author count within each field in each year
 - The author transition counts between fields during each year
 - The author transition rate between fields for a given year.
