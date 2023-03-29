@@ -5,9 +5,7 @@
 #### Motivation
 What do scientific authorship trends tells us about the importance of different scientific fields? 
 Can this information help a young scientist choose their field?
-
-**Intuition**: 
-Measuring authors who *switch between fields* tells us how scientists rank the relative importance of fields. 
+- Measuring authors who *switch between fields* tells us how scientists rank the relative importance of fields. 
 More importantly, this measures preference *for people who have seen both fields*, and then made the monumental decision to switch or stay.
 This is a much stronger signal of value than just measuring author number over time, which includes first time authors. 
 
