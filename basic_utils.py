@@ -30,12 +30,7 @@ MAX_PUBLICATIONS = 100 # max publications allowed to consider an author (otherwi
 MIN_PUBLICATIONS = 0
 YEARS_BINSIZE = 1.0  # how large bins to group together on derivative calculation
     # DONT change this unless you check where it propagates 
-
-
-def get_metadata():
-    with open('arxiv_data/arxiv-metadata-oai-snapshot.json', 'r') as f:
-        for line in f:
-            yield line
+    
             
 # https://arxiv.org/help/api/user-manual
 category_map = {
