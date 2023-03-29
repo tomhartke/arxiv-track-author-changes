@@ -6,20 +6,12 @@ These files take the dataset of all ArXiv papers ever published, and
 extract the way that authors transition between scientific fields over time.
 
 The main metrics are:
-- The author count within each field in each year 
-  - A single author is assumed to correspond to each unique name (not perfect)
-  - An author who publishes in multiple categories is counted as being fractionally located in each field,
-  given by 1/(the number of fields they published in).
+- The author count within each field in each year
 - The author transition counts between fields during each year
-  - For each unique author name, I take the difference between the current year author categories, and the
-  previous year author categories.
-  - The losses in some categories and gains in others for a specific author are counted as transitions from
-  the fields with losses to the fields with gains (and these gains and losses are attributed uniformly 
-  across all the gains and losses, proportionally to how much each field is lost out of the total loss, for example).
 - The author transition rate between fields for a given year.
-  - This is just the transition counts, divided by the field size.
-  - In other words, it is the probability, conditioned on being an author in a specific field, that you transition
-  from that field to another field during that year.
+ 
+> Example data for the major fields on ArXiv.
+![Alt text](plots/major_categories/Fields_summary.png?raw=true "Optional") 
 
 ## Files
 
@@ -35,7 +27,7 @@ The main metrics are:
 
 ## How to use
 
-### Explore your own ArXiv fields
+### Explore how authors transition between your own ArXiv fields
 If you want to play with the data (already extracted author counts/transitions over time), 
 for example to see how your own field changes over time, just use arxiv-metadata-plotting.ipynb. 
 This notebook should just run if you download the repository, then you can change what types of fields you look at, etc.
@@ -45,3 +37,21 @@ This notebook should just run if you download the repository, then you can chang
 If you want to double check the extraction of data, and exactly what quantities are being pulled
 to the .json files, use arxiv-metadata-extraction.ipynb.
 Doing this requires you to have a few other things downloaded and set up in various folders.
+
+
+## More explanation of metrics
+The main metrics are:
+- The author count within each field in each year 
+  - A single author is assumed to correspond to each unique name (not perfect)
+  - An author who publishes in multiple categories is counted as being fractionally located in each field,
+  given by 1/(the number of fields in the union of all fields they published in during that year).
+- The author transition counts between fields during each year
+  - For each unique author name, I take the difference between the current year author categories, and the
+  previous year author categories.
+  - The losses in some categories and gains in others for a specific author are counted as transitions from
+  the fields with losses to the fields with gains (and these gains and losses are attributed uniformly 
+  across all the gains and losses, proportionally to how much each field is lost out of the total loss, for example).
+- The author transition rate between fields for a given year.
+  - This is just the total transition counts, divided by the field size of the source field.
+  - In other words, it is something like the probability, conditioned on being an author in a specific field, that you transition
+  from that field to another field during that year.
