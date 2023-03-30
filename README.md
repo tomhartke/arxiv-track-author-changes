@@ -1,4 +1,5 @@
 # arxiv-track-author-preferences 
+Further analysis and explanations can be found in this [summary post](https://www.tomhartke.com/thoughts/choosing-a-scientific-field).
 
  
 ## Summary 
